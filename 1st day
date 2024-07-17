@@ -1,0 +1,30 @@
+Find Duplicate numbers:-
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        dic={}
+        for i in nums:
+            if i not in dic:
+                dic[i]=1
+            else:
+                return i
+        return -1            
+
+
+Sort Colors:-
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        s=0
+        e=len(nums)-1
+        i=0
+
+        while i<=e:
+            if nums[i]==0:
+                nums[i], nums[s]=nums[s], nums[i]
+                s+=1
+                i+=1
+            elif nums[i]==2:
+                nums[e], nums[i]=nums[i], nums[e]
+                e-=1
+            else:
+                i+=1
+        return nums            
